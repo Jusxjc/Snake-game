@@ -12,10 +12,6 @@ class Apple:
         screen.blit(self.apple_surface,self.apple_rect)
 
 class tile:
-    #helps identify tile and remove the specific tile (increments by 1)
-    _id=0
-    #stores tiles incase they must be removed
-    tile_dict={}
     def __init__(self,x_coord,y_coord, tile_color,):
         self.x_coord= x_coord
         self.y_coord=y_coord
@@ -23,10 +19,6 @@ class tile:
         self.tile_surface = pygame.surface.Surface((15,15))
         self.tile_surface.fill(self.tile_color)
         self.tile_rect= self.tile_surface.get_rect(topleft=(self.x_coord,self.y_coord))
-        #adds to dictionary
-        tile._id+=1
-        self.id= tile._id
-        tile.tile_dict[self._id]=self.tile_surface
     
     def draw(self,screen):
         screen.blit(self.tile_surface,self.tile_rect)
